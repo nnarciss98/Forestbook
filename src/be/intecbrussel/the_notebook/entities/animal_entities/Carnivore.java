@@ -2,7 +2,7 @@ package be.intecbrussel.the_notebook.entities.animal_entities;
 
 public class Carnivore extends Animal{
 
-    /** Variable containing the maximum size of this animal's food  */
+    /** Variable containing the maximum size of this animal's prey */
     private double maxFoodSize;
 
     /**
@@ -31,16 +31,16 @@ public class Carnivore extends Animal{
 
     /**
      * Getter for the maxFoodSize variable
-     * @return  The value of the maximum size of the food
+     * @return  The value of the maximum size of the prey
      */
     public double getMaxFoodSize(){
         return this.maxFoodSize;
     }
 
     /**
-     * Setter for the maximum size of food
+     * Setter for the maximum size of prey
      * @param newMaxFoodSize
-     *          The new maximum size of food
+     *          The new maximum size of prey
      */
     public void setMaxFoodSize(double newMaxFoodSize) {
         this.maxFoodSize = newMaxFoodSize;

@@ -7,7 +7,7 @@ public class Omnivore extends Animal {
 
     /** Variable containing the diet of this animal */
     private Set<Plant> plantDiet;
-    /** Variable containing the maximum size of this animal's food */
+    /** Variable containing the maximum size of this animal's prey */
     private double maxFoodSize;
 
     /**
@@ -51,17 +51,17 @@ public class Omnivore extends Animal {
     }
 
     /**
-     * Getter for the maximum size of this animal's food
-     * @return  The maximum size of this animal's food
+     * Getter for the maximum size of this animal's prey
+     * @return  The maximum size of this animal's prey
      */
     public double getMaxFoodSize(){
         return this.maxFoodSize;
     }
 
     /**
-     * Setter for the maximum size of this animal's food
+     * Setter for the maximum size of this animal's prey
      * @param newMaxFoodSize
-     *          The new maximum size of this animal's food
+     *          The new maximum size of this animal's prey
      */
     public void setMaxFoodSize(double newMaxFoodSize){
         this.maxFoodSize = newMaxFoodSize;
