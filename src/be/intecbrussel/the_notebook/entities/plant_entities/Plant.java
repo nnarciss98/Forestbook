@@ -2,9 +2,10 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Plant {
 
-    /* Variables containing the name and height of the plant objects */
-    private String name;
-    private double height;
+    /** Variable containing the name of he plant object */
+    protected String name;
+    /** Variable containing the height of the plant object */
+    protected double height;
 
     /**
      * Initialise a new Plant object with given name
