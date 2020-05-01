@@ -2,7 +2,7 @@ package be.intecbrussel.the_notebook.entities.animal_entities;
 
 public class Carnivore extends Animal{
 
-    /** Variable containing the maximum size of this animal's food */
+    /** Variable containing the maximum size of this animal's food  */
     private double maxFoodSize;
 
     /**
