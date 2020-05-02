@@ -8,19 +8,19 @@ import java.util.*;
 public class ForestNotebook {
 
     /** Variable containing a list of all seen carnivore animals */
-    private ArrayList<Carnivore> carnivores;
+    private ArrayList<Carnivore> carnivores = new ArrayList<Carnivore>();
     /** Variable containing a list of all seen omnivore animals */
-    private ArrayList<Omnivore> omnivores;
+    private ArrayList<Omnivore> omnivores = new ArrayList<Omnivore>();
     /** Variable containing a list of all seen herbivore animals */
-    private ArrayList<Herbivore> herbivores;
+    private ArrayList<Herbivore> herbivores = new ArrayList<Herbivore>();
     /** Variable containing the total number of seen plants */
-    private int plantCount;
+    private int plantCount = 0;
     /** Variable containing the total number of seen animals */
-    private int animalCount;
+    private int animalCount = 0;
     /** Variable containing a list of all seen animals */
-    private ArrayList<Animal> animals;
+    private ArrayList<Animal> animals = new ArrayList<Animal>();
     /** Variable containing a list of all seen plants */
-    private ArrayList<Plant> plants;
+    private ArrayList<Plant> plants = new ArrayList<Plant>();
 
     /**
      * Default constructor
@@ -103,6 +103,15 @@ public class ForestNotebook {
     }
 
     /**
+     * Setter for the plantCount variable
+     * @param newCount
+     *          New number of plants that have been seen
+     */
+    public void setPlantCount(int newCount){
+        this.plantCount = newCount;
+    }
+
+    /**
      * Getter for the animalCount variable
      * @return  Total number of animals that have been seen
      */
@@ -111,41 +120,80 @@ public class ForestNotebook {
     }
 
     /**
-     * Method that will add an animal to the list of already seen animals
-     * @param animal
-     *          The animal to be added to the list of animals that have already been seen
-     *
-     *      | if (animal == carnivore)
-     *      |       then carnivores.add(animal)
-     *      | if (animal == herbivore)
-     *      |       then herbivores.add(animal)
-     *      | else
-     *      |       omnivores.add(animal)
+     * Setter for the animalCount variable
+     * @param newCount
+     *          New number of animals that have been seen
      */
-    public void addAnimal(Animal animal){
-        if (animal instanceof Carnivore){
-            this.getCarnivores().add((Carnivore)animal);
-        }
-        else if (animal instanceof Herbivore){
-            this.getHerbivores().add((Herbivore)animal);
-        }
-        else {
-            this.getOmnivores().add((Omnivore)animal);
-        }
-        this.getAnimals().add(animal);
+    public void setAnimalCount(int newCount){
+        this.animalCount = newCount;
     }
 
     /**
-     * Method that adds a plant to the list of plants that have already been seen
+     * Method that will add an animal to the list of already seen animals, if the animal hasn't been seen yet
+     * @param animal
+     *          The animal to be added to the list of animals that have already been seen
+     *
+     *      | if !animals.contains(animal)
+     *      |       if (animal == carnivore)
+     *      |           then carnivores.add(animal)
+     *      |       if (animal == herbivore)
+     *      |           then herbivores.add(animal)
+     *      |       else
+     *      |           omnivores.add(animal)
+     *      |       animalCount += 1
+     */
+    public void addAnimal(Animal animal){
+        if (!this.getAnimals().contains(animal)){
+            this.getAnimals().add(animal);
+            if (animal instanceof Herbivore){
+                this.getHerbivores().add((Herbivore)animal);
+            }
+            else if (animal instanceof Carnivore){
+                this.getCarnivores().add((Carnivore)animal);
+            }
+            else {
+                this.getOmnivores().add((Omnivore)animal);
+            }
+            this.setAnimalCount(this.getAnimalCount() + 1);
+        }
+    }
+
+    /**
+     * Method that adds a plant to the list of plants that have already been seen, if the plant hasn't been seen yet
      * @param plant
      *          Plant to be added to the list of plants that have already been seen
      */
-    public void addPlant(Plant plant){
-        this.getPlants().add(plant);
+    public void addPlant(Plant plant) {
+        if (!this.getPlants().contains(plant)) {
+            this.getPlants().add(plant);
+            this.setPlantCount(this.getPlantCount() + 1);
+        }
     }
 
+    /**
+     * Method that prints out all elements in the notebook
+     */
     public void printNotebook(){
+        System.out.println("ForestNotebook:");
+        System.out.println("Plants: ");
+        this.getPlants().forEach((Plant plant) -> System.out.println(plant.toString()));
+        System.out.println("Animals: ");
+        this.getAnimals().forEach((Animal animal) -> System.out.println(animal.toString()));
+    }
 
+    public void printCarnivores(){
+        System.out.println("Carnivore animals: ");
+        this.getCarnivores().forEach((Carnivore carnivore) -> System.out.println(carnivore.toString()));
+    }
+
+    public void printOmnivores(){
+        System.out.println("Omnivore animals animals: ");
+        this.getOmnivores().forEach((Omnivore omnivore) -> System.out.println(omnivore.toString()));
+    }
+
+    public void printHerbivores(){
+        System.out.println("Herbivore animals: ");
+        this.getHerbivores().forEach((Herbivore herbivore) -> System.out.println(herbivore.toString()));
     }
 
     /**
@@ -160,5 +208,19 @@ public class ForestNotebook {
      */
     public void sortPlantsByName(){
         this.getPlants().sort((Plant plant1, Plant plant2) -> plant1.getName().compareTo(plant2.getName()));
+    }
+
+    /**
+     * Method that sorts the animals that have been seen by their height
+     */
+    public void sortAnimalsByHeight(){
+        this.getAnimals().sort((Animal animal1, Animal animal2) -> (int)(animal1.getHeight() - animal2.getHeight()));
+    }
+
+    /**
+     * Method that sorts the plants that have been seen by their height
+     */
+    public void sortPlantsByHeight(){
+        this.getPlants().sort((Plant plant1, Plant plant2) -> (int)(plant1.getHeight() - plant2.getHeight()));
     }
 }

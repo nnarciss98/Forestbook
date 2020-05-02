@@ -43,7 +43,7 @@ public class Weed extends Plant{
     }
 
     public String toString(){
-        return this.getName() + " is a plant of the type weed.";
+        return "Name: " + this.getName() + ".\tHeight: " + this.getHeight() + "cm.\tArea: " + this.getArea() + "m².\tThis is a weed.\n";
     }
 
 }

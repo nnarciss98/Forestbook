@@ -48,7 +48,7 @@ public class Animal {
 
     /**
      * Getter for the weight variable
-     * @return  The weight of this animal
+     * @return  The weight of this animal in kg
      */
     public double getWeight(){
         return this.weight;
@@ -65,7 +65,7 @@ public class Animal {
 
     /**
      * Getter for the height variable
-     * @return  The height of this animal
+     * @return  The height of this animal in cm
      */
     public double getHeight(){
         return this.height;
@@ -82,7 +82,7 @@ public class Animal {
 
     /**
      * Getter for the length variable
-     * @return  The length of this animal
+     * @return  The length of this animal in m
      */
     public double getLength(){
         return this.length;

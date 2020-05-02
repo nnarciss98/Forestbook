@@ -47,6 +47,6 @@ public class Carnivore extends Animal{
     }
 
     public String toString(){
-        return this.getName() + " is a Carnivore";
+        return "Name: " + this.getName() + ".\tWeight: " + this.getWeight() + "kg.\tHeight: " + this.getHeight() + "cm.\tLength: " + this.getLength() + "m.\tThis is a carnivore animal.\n";
     }
 }

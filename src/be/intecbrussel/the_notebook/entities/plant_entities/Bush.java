@@ -61,6 +61,6 @@ public class Bush extends Plant{
     }
 
     public String toString(){
-        return this.getName() + " is a plant of the type bush.";
+        return "Name: " + this.getName() + ".\tHeight: " + this.getHeight() + "cm.\tFruit: " + this.getFruit() +".\tLeaf type: " + this.getLeafType() + ".\tThis is a bush.\n";
     }
 }

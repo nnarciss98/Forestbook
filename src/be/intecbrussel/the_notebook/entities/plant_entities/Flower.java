@@ -43,6 +43,6 @@ public class Flower extends Plant{
     }
 
     public String toString(){
-        return this.getName() + " is a plant of the type flower";
+        return "Name: " + this.getName() + ".\tHeight: " + this.getHeight() + "cm.\tSmell: " + this.getSmell() + ".\tThis is a flower.\n";
     }
 }

@@ -43,6 +43,6 @@ public class Tree extends Plant{
     }
 
     public String toString(){
-        return this.getName() + " is a plant of the type tree.";
+        return "Name: " + this.getName() + ".\tHeight: " + this.getHeight() + "cm.\tLeaf type: " + this.getLeafType() + ".\tThis is a tree.\n";
     }
 }

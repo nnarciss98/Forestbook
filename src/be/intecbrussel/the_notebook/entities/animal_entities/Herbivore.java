@@ -66,6 +66,6 @@ public class Herbivore extends Animal{
     }
 
     public String toString(){
-        return this.getName() + " is an herbivore animal.";
+        return "Name: " + this.getName() + ".\tWeight: " + this.getWeight() + "kg.\tHeight: " + this.getHeight() + "cm.\tLength: " + this.getLength() + "m.\tThis is an Herbivore animal.\n";
     }
 }
