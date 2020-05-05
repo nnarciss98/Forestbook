@@ -96,4 +96,13 @@ public class Animal {
     public void setLength(double newLength){
         this.length = newLength;
     }
+
+    //TODO ik zou in deze klasse al een toString() voorzien en dan in je subklassen die oproepen
+    // maak gebruik van de kracht van inheritance
+    // klein voorbeeld hieronder en in de carnivore klasse
+    // getClass().getSimpleName() dit geeft de juiste naam terug van de klasse at runtime
+    //  @Override
+    // public String toString() {
+    //    return String.format("%s name='%s', weight=%s, height=%s, length=%s}", getClass().getSimpleName(), name, weight, height, length);
+    // }
 }

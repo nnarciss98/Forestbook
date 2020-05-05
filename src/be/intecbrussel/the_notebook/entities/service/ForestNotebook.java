@@ -7,6 +7,8 @@ import java.util.*;
 
 public class ForestNotebook {
 
+    //TODO Gebruik altijd de List interface die hoger is in hierarchie ipv de implementeerde klasse
+    //
     /** Variable containing a list of all seen carnivore animals */
     private ArrayList<Carnivore> carnivores = new ArrayList<Carnivore>();
     /** Variable containing a list of all seen omnivore animals */
@@ -98,7 +100,11 @@ public class ForestNotebook {
      * Getter for the plantCount variable
      * @return  Total number of plants that have been seen
      */
+    //TODO hier kon je de size() van u lijst terug geven,
+    // dan moet je niet in addPlant() de incrementatie doen ;)
+    // zie voorbeeld
     public int getPlantCount(){
+    //TODO plantCount = plants.size();
         return this.plantCount;
     }
 
@@ -115,6 +121,7 @@ public class ForestNotebook {
      * Getter for the animalCount variable
      * @return  Total number of animals that have been seen
      */
+    //TODO hetzelfde zoals bij getPlantCount
     public int getAnimalCount(){
         return this.animalCount;
     }
@@ -154,6 +161,7 @@ public class ForestNotebook {
             else {
                 this.getOmnivores().add((Omnivore)animal);
             }
+            //TODO dit mag je weglaten indien je de getAnimalCount() anders implementeerd
             this.setAnimalCount(this.getAnimalCount() + 1);
         }
     }
@@ -176,6 +184,7 @@ public class ForestNotebook {
     public void printNotebook(){
         System.out.println("ForestNotebook:");
         System.out.println("Plants: ");
+        //TODO this.getPlants().forEach(System.out::println);
         this.getPlants().forEach((Plant plant) -> System.out.println(plant.toString()));
         System.out.println("Animals: ");
         this.getAnimals().forEach((Animal animal) -> System.out.println(animal.toString()));
@@ -199,6 +208,9 @@ public class ForestNotebook {
     /**
      * Method that sorts the animals, that have been seen, alphabetically by their name
      */
+    //TODO goed gedaan maar je kan ook  de comparing() van de Comparator interface en method reference gebruiken
+    //         this.getAnimals().sort(Comparator.comparing(Animal::getName));
+    //
     public void sortAnimalsByName(){
         this.getAnimals().sort((Animal animal1, Animal animal2) -> animal1.getName().compareTo(animal2.getName()));
     }

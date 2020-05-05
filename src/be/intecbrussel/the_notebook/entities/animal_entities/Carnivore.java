@@ -49,4 +49,10 @@ public class Carnivore extends Animal{
     public String toString(){
         return "Name: " + this.getName() + ".\tWeight: " + this.getWeight() + "kg.\tHeight: " + this.getHeight() + "cm.\tLength: " + this.getLength() + "m.\tThis is a carnivore animal.\n";
     }
+
+    //TODO dus indien je de toString zou implementeren in Animal, ziet er je toString() er zo uit
+    // @Override
+    // public String toString() {
+    //    return String.format("%s maxFoodSize=%s", super.toString(), maxFoodSize);
+    // }
 }

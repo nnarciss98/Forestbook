@@ -5,6 +5,9 @@ import be.intecbrussel.the_notebook.entities.animal_entities.*;
 import be.intecbrussel.the_notebook.entities.service.ForestNotebook;
 import java.util.*;
 
+//TODO algemeen: super goed gedaan!
+// Goede structuur van je project en code en mooi gedocumenteerd :)
+
 public class NatureApp {
 
     public static void main(String[] args){
